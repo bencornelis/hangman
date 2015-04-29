@@ -3,7 +3,7 @@ require './app'
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-describe('The hangman app path') do
+describe('The hangman app path', {:type => :feature}) do
   it("Take a letter input and if correct add that letter to the word, if not add it to incorrect letter and build hangman") do
     visit('/')
     fill_in('letter_checker', :with => 'e')
