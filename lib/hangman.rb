@@ -16,6 +16,10 @@ class Hangman
     @word
   end
 
+  define_method(:number_incorrect) do
+    @incorrect_letters.length()
+  end
+
   define_method(:hidden_word) do
     @hidden_word
   end
@@ -39,5 +43,12 @@ class Hangman
 
   end
 
+  define_method(:save) do
+    @@hangmen.push(self)
+  end
+
+  define_singleton_method(:all) do
+    @@hangmen
+  end
 
 end
