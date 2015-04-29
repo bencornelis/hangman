@@ -1,10 +1,19 @@
 class Hangman
 
   @@hangmen = []
-  @@words = ["epic", "elephant", "ruby", "sinatra", 'purple']
+  @@easy_words = ["epic", "elephant", "ruby", "sinatra", 'purple']
+  @@medium_words = ["penguin"]
+  @@hard_words = ["initialize"]
 
-  define_method(:initialize) do
-    @word = @@words[rand(@@words.length())]
+  define_method(:initialize) do |difficulty_level|
+    @difficulty = difficulty_level
+    if difficulty_level == "easy"
+      @word = @@easy_words[rand(@@easy_words.length())]
+    elsif difficulty_level == "medium"
+      @word = @@medium_words[rand(@@medium_words.length())]
+    elsif difficulty_level == "hard"
+      @word = @@hard_words[rand(@@hard_words.length())]
+    end
     @word_array = @word.split('')
     @hidden_word = '_ '*(@word.length())
     @hidden_word = @hidden_word[0...-1]
@@ -14,6 +23,10 @@ class Hangman
 
   define_method(:word) do
     @word
+  end
+
+  define_method(:difficulty) do
+    @difficulty
   end
 
   define_method(:number_incorrect) do
