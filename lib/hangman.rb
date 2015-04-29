@@ -1,7 +1,7 @@
 class Hangman
 
   @@hangmen = []
-  @@words = ["epic"]
+  @@words = ["epic", "elephant", "ruby", "sinatra", 'purple']
 
   define_method(:initialize) do
     @word = @@words[rand(@@words.length())]
@@ -49,6 +49,10 @@ class Hangman
 
   define_singleton_method(:all) do
     @@hangmen
+  end
+
+  define_singleton_method(:clear) do
+    @@hangmen = []
   end
 
 end

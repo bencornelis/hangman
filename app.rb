@@ -4,6 +4,7 @@ also_reload('lib/**/*.rb')
 require('./lib/hangman')
 
 get('/') do
+  Hangman.clear()
   @hangman = Hangman.new()
   @hangman.save()
   erb(:index)
