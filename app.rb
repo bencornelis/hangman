@@ -4,9 +4,7 @@ also_reload('lib/**/*.rb')
 require('./lib/hangman')
 
 get('/') do
-  # Hangman.clear()
-  # @hangman = Hangman.new()
-  # @hangman.save()
+
   erb(:index)
 end
 
@@ -22,15 +20,3 @@ post('/difficulty/:level') do
   @hangman.save()
   erb(:game)
 end
-
-# post('/difficulty/:level') do
-#   Hangman.clear()
-#   @hangman = Hangman.new(params.fetch('level'))
-#   @hangman.save()
-#   erb(:index)
-# end
-
-# get('/difficulty/tester') do
-#   @hangman = Hangman.all()[0]
-#   erb(:game)
-# end

@@ -1,14 +1,12 @@
 <br>
 <br>
-
 <% unless @hangman.number_incorrect() > 10 %>
-  <img src='images/hang<%= @hangman.number_incorrect() %>.gif'>
+  <img src='/images/hang<%= @hangman.number_incorrect() %>.gif'>
 <% else %>
-  <img src='images/hang10.gif'>
+  <img src='/images/hang10.gif'>
 <% end %>
-<!--
-<img src='images/hang0.gif'>
--->
+
+
 <br>
 <h1>Difficulty: <%= @hangman.difficulty() %></h1>
 <h2><%= @hangman.hidden_word() %></h2>
