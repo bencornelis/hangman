@@ -4,7 +4,6 @@ also_reload('lib/**/*.rb')
 require('./lib/hangman')
 
 get('/') do
-
   erb(:index)
 end
 
